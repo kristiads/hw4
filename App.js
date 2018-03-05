@@ -77,8 +77,6 @@ export default class App extends React.Component {
       currentIcon: <Icon name={FontAwesomeCurrentIcon} size={100} color="#000" />,
       forecast: response.weather.daily.data
     });
-
-    console.log(this.state.forecast[0].icon)
   }
 
   render() {
@@ -107,7 +105,6 @@ export default class App extends React.Component {
             <Text style={styles.forecastDay}>{forecastDay}</Text>
             <Text style={styles.forecastIcon}><Icon size={30} name={icon(this.state.forecast[i].icon)} /></Text>
             <Text style={styles.forecastTemperature}>{Math.round(this.state.forecast[i].temperatureHigh) + String.fromCharCode(176)}</Text>
-            // <Text style={styles.forecastSummary}>{this.state.forecast[i].summary}</Text>
           </View>
         )
       }
